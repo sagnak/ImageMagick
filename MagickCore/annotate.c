@@ -674,7 +674,7 @@ MagickExport ssize_t FormatMagickCaption(Image *image,DrawInfo *draw_info,
     if (status == MagickFalse)
       break;
     width=(size_t) floor(metrics->width+draw_info->stroke_width+0.5);
-    if (width <= image->columns)
+    if (width < image->columns)
       continue;
     if (s != (char *) NULL)
       p=ReplaceSpaceWithNewline(caption,s);
