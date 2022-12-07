@@ -673,7 +673,7 @@ MagickExport ssize_t FormatMagickCaption(Image *image,DrawInfo *draw_info,
     status=GetTypeMetrics(image,draw_info,metrics,exception);
     if (status == MagickFalse)
       break;
-    width=(size_t) floor(metrics->width+draw_info->stroke_width+0.5);
+    width=(size_t) floor(metrics->width+draw_info->stroke_width+0.5+2*ceil(-metrics->bounds.x1+0.5));
     if (width < image->columns)
       continue;
     if (s != (char *) NULL)
